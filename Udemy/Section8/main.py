@@ -36,15 +36,14 @@ def main():
     # オススメのレストランを入力してもらう
     question = string.Template(question_template).substitute(name=name)
     cprint(question, 'green', end='')
-    restaurant = input()
+    restaurant = input().title()
     
     # 名前、レストランをcsvに書き出す
     with open('ranking.csv', 'a+') as csv_file:
-        
         fieldnames = ['Name', 'Count']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
-        
+        writer.writerow({'Name': restaurant, 'Count': 'A'})
 
 if __name__ == '__main__':
     main()
