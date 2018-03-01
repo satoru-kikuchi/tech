@@ -12,7 +12,7 @@ import seaborn as sns
 
 # 終値情報を持つcsvから価格を得ます
 def importData():
-    btc_price = pd.read_csv('/Users/ryokikuchi/Documents/work/tech/python/Lesson/Lesson1/Chapter16/coindesk-bpi-USD-close_data-2010-07-18_2018-02-25.csv')
+    btc_price = pd.read_csv('coindesk-bpi-USD-close_data-2010-07-18_2018-02-25.csv')
     btc_price.head()
     data = np.array(btc_price)
     return data
